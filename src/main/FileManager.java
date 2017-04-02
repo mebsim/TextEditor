@@ -36,16 +36,17 @@ public class FileManager {
 		return false;
 	}
 	
-	// How to convert an array of btyes to hex: http://stackoverflow.com/questions/9655181/how-to-convert-a-byte-array-to-a-hex-string-in-java
-	final protected static char[] hexArray = "0123456789ABCDEF".toCharArray();
-	public static String bytesToHex(byte[] bytes) {
-	    char[] hexChars = new char[bytes.length * 2];
-	    for ( int j = 0; j < bytes.length; j++ ) {
-	        int v = bytes[j] & 0xFF;
-	        hexChars[j * 2] = hexArray[v >>> 4];
-	        hexChars[j * 2 + 1] = hexArray[v & 0x0F];
-	    }
-	    return new String(hexChars);
+	public static String bTH(byte[] bytes) {
+		String hex = "";
+		for(int i = 0; i < bytes.length; i++) {
+			String intHex = Integer.toString(bytes[i],16);
+			if(hexStr.length() != 2) {
+				intHex = "0" + hexStr;
+			}
+			hex += intHex;
+		}
+		System.out.println(hex);
+		return hex.toUpperCase();
 	}
 	
 	public void loadFile() {
@@ -64,7 +65,7 @@ public class FileManager {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		text = bytesToHex(bytes);
+		text = bTH(bytes);
 	}
 	
 	public void saveFile(String text) throws IOException {
