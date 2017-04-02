@@ -82,9 +82,6 @@ public class FileManager {
 			os = new FileOutputStream(System.getProperty("user.home") + fileLocation);
 			os = new DataOutputStream(os);
 			
-			/* This logic will make sure that the file 
-			 * gets created if it is not present at the
-			 * specified location*/
 			if (!file.exists()) {
 				// Make sure to later to add a request and asking procedure to make sure that you make a new file. Ex. DO YOU WANT TO MAKE A NEW FILE? YES NO
 				file.createNewFile();
@@ -100,11 +97,12 @@ public class FileManager {
 		   ioe.printStackTrace();
 		} finally { 
 			try{
-				if(os!=null)
+				if(os != null) {
 					os.close();
+				}
 			} catch(Exception ex) {
-				System.out.println("Error in closing the OutputSteam"+ex);
-		    }
+				System.out.println("Couldn't close the OutputSteam"+ex);
+			}
 		}
 	}
 	
