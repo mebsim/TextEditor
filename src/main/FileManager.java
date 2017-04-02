@@ -50,6 +50,7 @@ public class FileManager {
 	
 	public void loadFile() {
 		File file = new File(System.getProperty("user.home") + fileLocation);
+		// I found how to read files in binary on: http://stackoverflow.com/questions/31600608/read-any-file-as-a-binary-string
 		byte[] bytes = new byte[(int)file.length()];
 		DataInputStream dIS = null;
 		try {
