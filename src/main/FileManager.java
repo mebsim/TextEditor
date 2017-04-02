@@ -92,17 +92,12 @@ public class FileManager {
 				System.out.println(value);
 				os.write(value);
 			}
-			System.out.println("File written Successfully");
+			System.out.println("File saved");
+			if(os != null) {
+				os.close();
+			}
 		} catch (IOException ioe) {
 		   ioe.printStackTrace();
-		} finally { 
-			try{
-				if(os != null) {
-					os.close();
-				}
-			} catch(Exception ex) {
-				System.out.println("Couldn't close the OutputSteam"+ex);
-			}
 		}
 	}
 	
