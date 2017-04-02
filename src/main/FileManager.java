@@ -36,6 +36,7 @@ public class FileManager {
 		return false;
 	}
 	
+	// How to convert an array of btyes to hex: http://stackoverflow.com/questions/9655181/how-to-convert-a-byte-array-to-a-hex-string-in-java
 	final protected static char[] hexArray = "0123456789ABCDEF".toCharArray();
 	public static String bytesToHex(byte[] bytes) {
 	    char[] hexChars = new char[bytes.length * 2];
