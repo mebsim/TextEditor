@@ -77,7 +77,7 @@ public class FileManager {
 	public void saveFile(String text) throws IOException {
 		OutputStream os = null;
 		try {
-	        //Specify the file name and path here
+			//Got the idea for it from: http://stackoverflow.com/questions/1388383/java-write-decimal-hex-to-a-file-and-not-string
 			File file = new File(System.getProperty("user.home") + fileLocation);
 			os = new FileOutputStream(System.getProperty("user.home") + fileLocation);
 			os = new DataOutputStream(os);
